@@ -1,14 +1,13 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
   selector: 'app-single',
-  outputs:['putRingOnit'],
   templateUrl: './single.component.html',
   styleUrls: ['./single.component.css']
 })
 export class SingleComponent implements OnInit {
-  putRingOnit:EventEmitter<string>
+  @Output() putRingOnit:EventEmitter<string>
   constructor() { 
     this.putRingOnit = new EventEmitter();
     //this.putRingOnit.subscribe((name:string)=>console.log(`Hello ${name}`));
