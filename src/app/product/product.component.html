@@ -3,7 +3,7 @@
   <span>{{ myFunction(product.sku) }}</span>
 </div> -->
 <div class="product-list">
-  <products-list [productList]="products"
+  <product-list [productList]="products"
    (onProductSelected)="productWasSelected($event)">
-  </products-list>
+  </product-list>
 </div>

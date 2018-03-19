@@ -4,7 +4,7 @@ import { Product } from '../product';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
 })
 export class ProductComponent { //implements OnInit
   products: Product[];  //products:Array<Product>
@@ -13,7 +13,7 @@ export class ProductComponent { //implements OnInit
       new Product("MYSHES", "Black Running Shoes","url1",["Men","Shoes","Running Shoes"],100.02),
       new Product("NEATOJACKET", "Blue Jacket","url2",["Women","Apparl","Jackets&Vests"],30.56),
       new Product("NICEHAT", "A Nice Black Hat","url3",["Men","Accrssories","Hats"],85.56),
-    ];
+    ]
   }
 
   //myFunction = myFunction;
