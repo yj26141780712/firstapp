@@ -1,6 +1,6 @@
+import { Hero } from './../hero';
 import { HEROS } from './../mock-heros';
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
 import { HeroService } from '../hero.service'; //
 
 @Component({
@@ -26,23 +26,32 @@ export class HerosComponent implements OnInit {
     //   new Hero (7,"123") ,
     // ]
   }
-
-  getHeros(): void {
-    //this.heros = HEROS;
-    console.log('12');
-     this.heroService.getHeros()
-        .subscribe(heros => this.heros = heros);
-  }
-
   onClick(hero:Hero){
     console.log("点击了"+hero.id);
     this.selectedHero = hero;
     console.log(this.selectedHero);
   }
 
+  delete(hero:Hero){
+     
+  } 
+
   ngOnInit() {
-    console.log('1');
+    //console.log('1');
     this.getHeros();
   }
 
+
+  getHeros(): void {
+    //this.heros = HEROS;
+    //console.log('12');
+      this.heroService.getHeros()
+         .subscribe(heros => this.heros = heros);
+    //  console.log("getHeros");
+  }
+
+  deleteHeros(hero:Hero):void{
+    this.heros = this.heros.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
+  }
 }
